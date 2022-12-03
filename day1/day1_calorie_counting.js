@@ -1,10 +1,10 @@
-import fs from 'fs';
+const fs = require('fs');
 
-const input = fs.readFileSync('./day1_calorie_counting2.txt', 'utf8');
+const input = fs.readFileSync(`${__dirname}/day1_calorie_counting.txt`, 'utf8');
 
 const parsedData = input
   .split('\n\n')
-  .map((item) => item.split('\n').reduce((sum, val) => sum + val, 0));
+  .map((item) => item.split('\n').reduce((sum, val) => sum + +val, 0));
 
 const max1 = Math.max(...parsedData);
 
